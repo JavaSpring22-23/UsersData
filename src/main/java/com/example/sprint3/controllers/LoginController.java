@@ -18,7 +18,7 @@ public class LoginController extends BaseController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String getLogin(){
         return "/login/login";
     }
