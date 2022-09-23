@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+
+<head></head>
+
+<body>
+
+<div layout:fragment="content">
+    <div class="container-fluid">
+
+
+
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Empresas</h1>
+            <a href="/createenterprise" class="btn btn-primary"> Nuevo</a>
+        </div>
+
+        <div class="row">
+            <table class="table table-bordered dataTable">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="empresa: ${misempresas}">
+                    <td th:text="${empresa.getNombre()}"></td>
+                    <td th:text="${empresa.getDireccion}"></td>
+                    <td th:text="${empresa.getTelefono}"></td>
+                    <td>
+
+                        <a th:href="@{'/deletempresa/{id}'(id=${empresa.id})}" class="btn btn-success">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

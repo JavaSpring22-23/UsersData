@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+
+<head></head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5 w-50 m-auto">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12 m-auto">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Nueva empresa</h1>
+                            </div>
+
+                            <form action="/postEnterprise" method="post" class="user">
+                                <div class="form-group row">
+
+                                    <div class="col-sm-6 m-auto">
+                                        <input name="nombre" type="text" class="form-control form-control-user"
+                                               placeholder="Nombre">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0 m-auto">
+                                        <input name="direccion" type="text" class="form-control form-control-user"
+                                               placeholder="Dirección">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row ">
+                                    <div class="col-sm-6 m-auto">
+                                        <input name="NIT" type="text" class="form-control form-control-user"
+                                               placeholder="NIT">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row ">
+                                    <div class="col-sm-6 m-auto">
+                                        <input name="telefono" type="text" class="form-control form-control-user"
+                                               placeholder="Teléfono">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row ">
+                                    <div class="col-sm-6 m-auto">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Ingresar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+
+
+</div>
+</body>
+
+</html>

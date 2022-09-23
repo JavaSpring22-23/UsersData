@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+
+<head></head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container-fluid">
+
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Usuarios</h1>
+            <a href="/createusuario" class="btn btn-primary"> Nuevo</a>
+        </div>
+
+        <div class="row">
+            <table class="table table-bordered dataTable">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="usr: ${misusuarios}">
+                    <td th:text="${usr.getNombre()}"></td>
+                    <td th:text="${usr.getCorreo()}"></td>
+                    <td th:text="${usr.getTelefono()}"></td>
+                    <td>
+
+                        <a th:href="@{'/deleteusuario/{id}'(id=${usr.id})}" class="btn btn-success">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+
+<head></head>
+
+<body>
+
+<div layout:fragment="content">
+
+
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Movimientos</h1>
+            <a href="/createmovement" class="btn btn-primary"> Nuevo</a>
+        </div>
+
+        <div class="row">
+            <table class="table table-bordered dataTable">
+                <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th>Usuario</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="mov: ${mismovimientos}">
+                    <td th:text="${mov.getConcepto()}"></td>
+                    <td th:text="${mov.getMonto()}"></td>
+                    <td th:text="${mov.getFecha()}"></td>
+                    <td th:text="${mov.getUsuario().getNombre()}"></td>
+                    <td>
+                        <a th:href="@{'/deletemovimiento/{id}'(id=${mov.id})}" class="btn btn-success">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

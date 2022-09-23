@@ -1,6 +1,9 @@
 package com.example.sprint3.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -10,12 +13,24 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private Set<Movimiento> movimiento;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
+
+
+
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "correo")
     private String correo;
-    @Column(name = "edad")
-    private int edad;
+    @Column(name = "telefono")
+    private int telefono;
     @Column(name = "perfil")
     private EnumUsuario enumUsuario;
 
@@ -23,11 +38,11 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String correo, int edad) {
+    public Usuario(int id, String nombre, String correo, int telefono) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
-        this.edad = edad;
+        this.telefono= telefono;
     }
 
     public int getId() {
@@ -54,12 +69,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getTelefono() {
+        return telefono;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public EnumUsuario getEnumUsuario() {
@@ -69,4 +84,23 @@ public class Usuario {
     public void setEnumUsuario(EnumUsuario enumUsuario) {
         this.enumUsuario = enumUsuario;
     }
+
+    public Set<Movimiento> getMovimiento() {
+        return movimiento;
+    }
+
+    public void setMovimiento(Set<Movimiento> movimiento) {
+        this.movimiento = movimiento;
+    }
+
+    @JsonBackReference
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+     <div layout:fragment="content">
+
+         <div class="container-fluid">
+             <h1 class="h3 mb-4 text-gray-800">Gestiones</h1>
+         </div>
+
+
+         <div class="card-deck">
+         <div class="card" style="width: 18rem;margin-left: 32px;">
+            <div class="card-body text-center" style="margin-bottom: 20px;">
+             <h5 class="card-title">Sistema de gestión de ingresos y gastos</h5>
+                <br>
+                <p class="card-text"> Realice una gestión de los ingresos y gastos, agregue montos y acceda a los datos</p>
+                <br>
+                <a href="/movements" class="btn btn-primary">Gestionar</a>
+            </div>
+         </div>
+
+         <div class="card" style="width: 18rem;margin-right: 32px;">
+             <div class="card-body text-center">
+                 <h5 class="card-title">Sistema de gestión de usuarios</h5>
+                 <br>
+                 <p class="card-text"> Realice una gestión de los usuarios, agregue nuevos usuarios en empresas junto con sus roles y acceda a los datos</p>
+                 <br>
+                 <a href="/users" class="btn btn-primary">Gestionar</a>
+             </div>
+         </div>
+
+         <div class="card" style="width: 18rem;">
+             <div class="card-body text-center">
+                 <h5 class="card-title">Sistema de gestión de empresas</h5>
+                 <br>
+                 <p class="card-text"> Realice una gestión de las empresas, agregue nuevas empresas y acceda a sus datos</p>
+                 <br>
+                 <a href="/enterprises" class="btn btn-primary">Gestionar</a>
+             </div>
+         </div>
+         </div>
+
+
+
+
+     </div>
+
+</body>
+</html>

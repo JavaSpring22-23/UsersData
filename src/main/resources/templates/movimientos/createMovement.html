@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+
+<head></head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+
+        <div class="card bg-light text-center">
+            <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+            <div class="card-body">
+                <!-- Nested Row within Card Body -->
+
+                <form action="/postMovement" method="post" class="user" th:object="${movimiento}">
+
+                    <div class="form-group row">
+                        <label class="col-md-2"> Usuario encargado </label>
+                        <select th:field="*{usuario}" class="form-control form-control-sm col-md-6">
+                            <option th:each="usr: ${usuarios}"
+                                    th:value="${usr.id}"
+                                    th:text="${usr.nombre}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2"> Monto </label>
+                        <input type="text"th:field="*{monto}" class="form-control form-control-sm col-md-6"
+                               placeholder="Monto">
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2">Concepto</label>
+                        <input type="text" th:field="*{concepto}" class="form-control form-control-sm col-md-6"
+                               placeholder="Concepto">
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2">Fecha</label>
+                        <input type="date" th:field="*{fecha}" class="form-control form-control-sm col-md-6"
+                               placeholder="Fecha">
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6 m-auto">
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Ingresar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+
+
+</div>
+</body>
+
+</html>

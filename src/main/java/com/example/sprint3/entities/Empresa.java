@@ -1,6 +1,9 @@
 package com.example.sprint3.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "empresas")
@@ -9,6 +12,13 @@ public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+
+    // Es buena idea establecer una relación múltiple en las bases de datos usando el One to Many(mappedBy) y Many to one - JoinColum(name)
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
+    private Set<Usuario> usuario;
+
+
 
     @Column(name = "nombre")
     private String nombre;
@@ -71,5 +81,15 @@ public class Empresa {
     public void setNIT(int NIT) {
         this.NIT = NIT;
     }
+
+    @JsonManagedReference
+    public Set<Usuario> getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Set<Usuario> usuario) {
+        this.usuario = usuario;
+    }
+
 
 }
