@@ -70,7 +70,7 @@ public class LoginController extends BaseController {
 
         Response response = loginService.createLoginUsuario(user);
         if(response.getCode() == 200){
-            return new RedirectView("/inicio");
+            return new RedirectView("inicio");
         }
         return new RedirectView("error");
     }

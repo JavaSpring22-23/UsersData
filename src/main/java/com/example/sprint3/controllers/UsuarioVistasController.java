@@ -28,7 +28,7 @@ public class UsuarioVistasController extends BaseController {
     private EmpresaService empresaService;
 
 
-    @GetMapping("/users")
+    @GetMapping("users")
     public String users(Model usuarios){
 
         // Acceder a la base de datos desde la lógica de negocios
