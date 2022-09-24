@@ -38,7 +38,7 @@ public class WebSecurityConfig implements UserDetailsService{
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
-                        .loginPage("/login")
+                        .loginPage("/")
                         .permitAll().defaultSuccessUrl("/inicio", true)
                 )
                 .logout((logout) -> logout.permitAll());
