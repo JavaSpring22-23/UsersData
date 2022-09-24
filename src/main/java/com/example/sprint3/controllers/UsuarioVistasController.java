@@ -49,7 +49,7 @@ public class UsuarioVistasController extends BaseController {
         model.addAttribute("usuario", usuario);
         model.addAttribute("empresas", listEmpresas);
         model.addAttribute("roles", EnumUsuario.values());
-        return "/usuarios/createUser";
+        return "usuarios/createUser";
     }
 
     @GetMapping("/errorUsuario")
