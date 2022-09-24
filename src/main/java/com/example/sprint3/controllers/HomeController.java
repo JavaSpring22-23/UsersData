@@ -14,7 +14,7 @@ public class HomeController extends BaseController{
         seguridad();
         // Esto toma un usuario de login y permite acceder a sus atributos desde el HTML con thymeleaf
         data.addAttribute("usuarioautenticado", seguridad());
-        return "/home/inicio";
+        return "home/inicio";
     }
 
 }

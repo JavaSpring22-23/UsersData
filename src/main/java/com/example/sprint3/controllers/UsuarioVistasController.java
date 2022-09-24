@@ -35,7 +35,7 @@ public class UsuarioVistasController extends BaseController {
         ArrayList<Usuario> usuarioDB = usuarioService.getAllUsuarios();
         // configurar el modelo a usar por thymeleaf
         usuarios.addAttribute("misusuarios", usuarioDB);
-        return "/usuarios/users";
+        return "usuarios/users";
     }
 
     // metodo para crear usuarios
