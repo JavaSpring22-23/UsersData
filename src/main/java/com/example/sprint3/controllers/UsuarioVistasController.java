@@ -39,7 +39,7 @@ public class UsuarioVistasController extends BaseController {
     }
 
     // metodo para crear usuarios
-    @GetMapping("/createusuario")
+    @GetMapping("createusuario")
     public String createUsuario(Model model){
         Usuario usuario = new Usuario();
 
